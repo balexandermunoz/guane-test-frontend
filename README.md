@@ -1,4 +1,4 @@
-# guane-test-frontend
+# Rick and Morty Fanpage!
 
 ## Project setup
 ```
