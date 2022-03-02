@@ -6,8 +6,7 @@ const getAllData = () => {
   const episodes = ref(null)
   const error = ref(null);
 
-  async function fetchData(idx){
-    console.log(idx)
+  async function fetchData(idx=1){
     let link = `https://rickandmortyapi.com/api/character/${idx}`
     try {
       let data = await fetch(link);
@@ -16,12 +15,12 @@ const getAllData = () => {
       }
       character.value = await data.json();
       character.value = character.value;
-      console.log('character: ',character)
+      //console.log('character: ',character)
 
       if(character.value.origin.url) fetchLocationData(character.value.origin.url)
 
       if(character.value.episode){
-        console.log('episodes: ', character.value.episode.length)
+        //console.log('episodes lenght: ', character.value.episode.length)
         let episodesIdx = [];
         character.value.episode.forEach((val,idx) => episodesIdx.push(val.match(/\d+$/)[0]))
         fetchEpisodesData(episodesIdx)
@@ -41,7 +40,7 @@ const getAllData = () => {
       }
       location.value = await data.json();
       location.value = location.value;
-      console.log('location:',location)
+      //console.log('location:',location)
     }
     catch(err) {
       error.value = err.message;
@@ -58,7 +57,6 @@ const getAllData = () => {
       }
       episodes.value = await data.json();
       if(character.value.episode.length <= 1) episodes.value = [episodes.value];
-      console.log('episodes:',episodes)
     }
     catch(err) {
       error.value = err.message;

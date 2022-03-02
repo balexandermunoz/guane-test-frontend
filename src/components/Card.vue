@@ -1,5 +1,5 @@
 <template>
-  <router-link class="card" :to="{name: 'Details', params: {id: character.id}}"> 
+  <router-link class="card" :to="{name: 'Details', params: {id: character.id}}">
     <h3>{{character.name}}</h3>
     <img :src="character.image" alt="">
     <table>

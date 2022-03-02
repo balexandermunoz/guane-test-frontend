@@ -44,17 +44,14 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import getCharacter from '../composables/fecthCharacter';
+
 import getAllData from '../composables/fetchAll';
 
 export default {
   props: ['id'],
   setup(props){
-    
     const {character,location, episodes, error, fetchData} = getAllData()
-    fetchData(props.id)
-
+    fetchData(props.id);
     return {character, location, episodes, error}
   },
 

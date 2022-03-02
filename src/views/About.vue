@@ -11,6 +11,10 @@
 
 <style scoped>
 
+h1 {
+  font-family: "Schwifty", Helvetica, Arial;
+}
+
 p {
   color: beige;
   font-family: "Shlop", Helvetica, Arial;
